@@ -5,15 +5,19 @@
     font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
 }
 
-html,
+
 body {
-    background-color: #e2e5d3;
+    background-color: #e7e7e4;
     color: #1b1b1b;
 }
 
-section{
-    display:table-cell;
-    vertical-align:middle;
+.banner-logo {
+    width: 150px;
+}
+
+section {
+    display: table-cell;
+    vertical-align: middle;
     height: 100vh;
     width: 100rem;
     max-width: 100%;
@@ -278,34 +282,40 @@ label.has-checkbox {
     color: #1b1b1b;
 }
 
-img{
+img {
     vertical-align: middle;
 }
 
 @media screen and (max-width:600px) {
-    html, body{
+
+    html, body {
         background-color: #fff;
     }
-    section{
-        display:block !important;
+
+    section {
+        display: block !important;
     }
-    .auth-wrapper{
+
+    .auth-wrapper {
         box-shadow: none !important;
         padding: 24px !important;
         width: unset !important;
         max-width: unset !important;
     }
-    .opts{
+
+    .opts {
         box-shadow: none !important;
         padding: 8px 24px !important;
         border: 1px solid #999;
         max-width: calc(100% - 48px);
         margin: 12% auto !important;
     }
-    .footer{
+
+    .footer {
         justify-content: start;
     }
 }
+
 :root {
     --error: #e81123;
 }

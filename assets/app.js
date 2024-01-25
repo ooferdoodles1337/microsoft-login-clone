@@ -1,108 +1,106 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const unReq = "Enter a valid email address, phone number, or Skype name."
-    const pwdReq = "Please enter the password for your Microsoft account."
+    const UNAME_VIEW = "uname";
+    const PWD_VIEW = "pwd";
+
+    const errorMessages = {
+        unReq: "Enter a valid email address or phone number",
+        pwdReq: "Sorry, your sign-in timed out. Please sign in again."
+    };
+
     const unameInp = document.getElementById('inp_uname');
     const pwdInp = document.getElementById('inp_pwd');
-    let view = "uname";
 
-    let unameVal = pwdVal = false;
-    /////next button
+    let view = UNAME_VIEW;
+    let unameVal = false;
+    let pwdVal = false;
+
     const nxt = document.getElementById('btn_next');
-
-    nxt.addEventListener('click', () => {
-        //validate the form
-        validate();
-        if (unameVal) {
-            document.getElementById("section_uname").classList.toggle('d-none');
-            document.getElementById('section_pwd').classList.remove('d-none');
-            document.querySelectorAll('#user_identity').forEach((e) => {
-                e.innerText = unameInp.value;
-            })
-            view = "pwd";
-        }
-    })
-
-    //////sign in button
-
     const sig = document.getElementById('btn_sig');
 
-    sig.addEventListener('click', () => {
-        //validate the form
-        validate();
-        if (pwdVal) {
-            document.getElementById("section_pwd").classList.toggle('d-none');
-            document.getElementById('section_final').classList.remove('d-none');
-            view = "final";
-        }
-    })
+    nxt.addEventListener('click', handleNextClick);
+    sig.addEventListener('click', handleSignInClick);
 
-    function validate() {
-        function unameValAction(type) {
-            if (!type) {
-                document.getElementById('error_uname').innerText = unReq;
-                unameInp.classList.add('error-inp');
-                unameVal = false;
-            } else {
-                document.getElementById('error_uname').innerText = "";
-                unameInp.classList.remove('error-inp')
-                unameVal = true;
-            }
+    document.querySelector('.back').addEventListener('click', handleBackClick);
 
-        }
-        function pwdValAction(type) {
-            if (!type) {
-                document.getElementById('error_pwd').innerText = pwdReq;
-                pwdInp.classList.add('error-inp')
-                pwdVal = false;
-            } else {
-                document.getElementById('error_pwd').innerText = "";
-                pwdInp.classList.remove('error-inp')
-                pwdVal = true;
-            }
+    document.querySelectorAll('#btn_final').forEach((b) => {
+        b.addEventListener('click', handleCloseWindow);
+    });
 
+    function handleNextClick() {
+        validate(UNAME_VIEW);
+        if (unameVal) {
+            toggleSections('section_uname', 'section_pwd');
+            updateUserIdentity();
+            view = PWD_VIEW;
         }
-        if (view === "uname") {
-            if (unameInp.value.trim() === "") {
-                unameValAction(false);
-            } else {
-                unameValAction(true);
-            }
-            unameInp.addEventListener('change', function () {
-                if (this.value.trim() === "") {
-                    unameValAction(false);
-                } else {
-                    unameValAction(true);
-                }
-            })
-        } else if (view === "pwd") {
-            if (pwdInp.value.trim() === "") {
-                pwdValAction(false);
-            } else {
-                pwdValAction(true);
-            }
-            pwdInp.addEventListener('change', function () {
-                if (this.value.trim() === "") {
-                    pwdValAction(false);
-                } else {
-                    pwdValAction(true);
-                }
-            })
-        }
-        return false;
     }
 
-    //back button
-    document.querySelector('.back').addEventListener('click', () => {
-        view = "uname";
-        document.getElementById("section_pwd").classList.toggle('d-none');
-        document.getElementById('section_uname').classList.remove('d-none');
-    })
+    function handleSignInClick() {
+        validate(PWD_VIEW);
+        if (pwdVal && view === PWD_VIEW) {
+            window.location.href = 'debrief.html';
+        }
+    }
 
-    //final buttons
-    document.querySelectorAll('#btn_final').forEach((b) => {
-        b.addEventListener('click', () => {
-            //close the window
-            window.open(location, '_self').close();
-        })
-    })
-})
+    function handleBackClick() {
+        view = UNAME_VIEW;
+        toggleSections('section_pwd', 'section_uname');
+    }
+
+    function handleCloseWindow() {
+        window.open(location, '_self').close();
+    }
+
+    function validate(currentView) {
+        if (currentView === UNAME_VIEW) {
+            validateUname();
+        } else if (currentView === PWD_VIEW) {
+            validatePwd();
+        }
+    }
+
+    function validateUname() {
+        const minLength = 5;
+        const type = unameInp.value.trim();
+
+        if (!type || type.length < minLength || type.indexOf('@') === -1) {
+            setError('error_uname', errorMessages.unReq);
+            unameVal = false;
+        } else {
+            clearError('error_uname', unameInp);
+            unameVal = true;
+        }
+    }
+
+    function validatePwd() {
+        const type = pwdInp.value.trim();
+        if (!type) {
+            setError('error_pwd', errorMessages.pwdReq);
+            pwdVal = false;
+        } else {
+            clearError('error_pwd', pwdInp);
+            pwdVal = true;
+        }
+    }
+
+    function setError(elementId, message) {
+        document.getElementById(elementId).innerText = message;
+        document.getElementById(elementId.replace('error_', 'inp_')).classList.add('error-inp');
+    }
+
+    function clearError(elementId, inputElement) {
+        document.getElementById(elementId).innerText = "";
+        inputElement.classList.remove('error-inp');
+    }
+
+    function toggleSections(hideSectionId, showSectionId) {
+        document.getElementById(hideSectionId).classList.toggle('d-none');
+        document.getElementById(showSectionId).classList.remove('d-none');
+    }
+
+    function updateUserIdentity() {
+        document.querySelectorAll('#user_identity').forEach((e) => {
+            e.innerText = unameInp.value;
+        });
+    }
+});

