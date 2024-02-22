@@ -6,56 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Alert</title>
     <style>
+        body,
+        h2,
+        strong {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            /* Set min-height to ensure content is centered */
+        }
+
+        header,
+        h2,
+        strong {
+            color: #dc3545;
         }
 
         header {
-            text-align: center;
-            color: #dc3545;
-            font-size: 36px;
+            font-size: 30px;
             font-weight: bold;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         section {
             width: 100%;
-            /* Adjust section width to full width */
-            max-width: 800px;
-            text-align: justify;
-            padding: 20px;
+            max-width: 700px;
+            padding: 30px;
             background-color: #fff;
-            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            /* Add some margin for better separation on small screens */
+            min-height: 100%;
+            margin: 0 auto;
             box-sizing: border-box;
-            /* Include padding and border in the element's total width and height */
+            padding-bottom: 60px;
         }
 
-        h2 {
-            color: #dc3545;
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            padding: 10px 0;
+            position: fixed;
+            left: 0;
+            bottom: 0;
         }
 
-        strong {
-            color: #dc3545;
+        .footer p {
+            font-size: small;
+            color: lightgrey;
+            margin: 0;
+        }
+
+        .footer a {
+            color: lightgray;
         }
     </style>
 </head>
+
 <body>
     <section>
         <header>
-            You've Been Hacked
+            We have engaged in a little tomfoolery
         </header>
         <h2>What happened?</h2>
         <p>
@@ -71,27 +86,40 @@
             the school's Microsoft login was created, prompting victims to enter their credentials, which may be used to
             gain access to their accounts.
         </p>
-        <h2>How to Avoid Falling Victim to Phishing</h2>
+        <h2>Tips to Avoid Phishing Scams</h2>
         <ol>
-            <li style="margin-bottom: 10px;"><strong>Be Skeptical:</strong> Always double-check the legitimacy of unexpected emails, messages, or
-                links. Avoid providing personal information without verifying the source.</li>
-            <li style="margin-bottom: 10px;"><strong>Verify the Sender:</strong> Confirm the identity of the sender before clicking on any links or
-                sharing sensitive information. Legitimate organizations won't request sensitive details via email.</li>
-            <li style="margin-bottom: 10px;"><strong>Use Two-Factor Authentication (2FA):</strong> Enable 2FA whenever possible to add an extra layer
-                of security to your accounts.</li>
-            <li style="margin-bottom: 10px;"><strong>Keep Software Updated:</strong> Regularly update your operating system, antivirus software, and
-                other applications to patch security vulnerabilities.</li>
-            <li style="margin-bottom: 10px;"><strong>Do Not Repeat Passwords:</strong> Avoid using the same password for multiple accounts. If one
-                account is compromised, using unique passwords helps control the damage and prevents unauthorized access to
-                other accounts.</li>
-            <li style="margin-bottom: 10px;"><strong>Report Suspicious Activity:</strong> If you receive suspicious emails or messages, promptly
-                report them to your IT department or the appropriate authorities.</li>
+            <li><strong>Stay Informed:</strong> Keep up-to-date with the latest phishing techniques to recognize and
+                avoid them effectively.</li>
+            <li><strong>Think Before You Click:</strong> Avoid clicking on links in suspicious emails or messages. Hover
+                over links to verify their legitimacy.</li>
+            <li><strong>Use Anti-Phishing Tools:</strong> Install browser toolbars that identify and warn against
+                phishing sites.</li>
+            <li><strong>Verify Site Security:</strong> Check for "https" and a lock icon in the URL bar before
+                submitting personal information.</li>
+            <li><strong>Regular Account Checks:</strong> Monitor your online accounts regularly for any unauthorized
+                activity.</li>
+            <li><strong>Keep Browser Updated:</strong> Update your web browser promptly to patch security
+                vulnerabilities.</li>
+            <li><strong>Utilize Firewalls:</strong> Employ both desktop and network firewalls for enhanced protection
+                against intruders.</li>
+            <li><strong>Beware of Pop-Ups:</strong> Block pop-ups and avoid clicking on suspicious ones, especially
+                those with misleading cancel buttons.</li>
+            <li><strong>Avoid Sharing Personal Info:</strong> Never share sensitive information online unless you're
+                certain about the recipient's legitimacy.</li>
+            <li><strong>Use Antivirus Software:</strong> Install and regularly update antivirus software to detect and
+                prevent phishing attacks.</li>
         </ol>
-        
+
         <p>
-            Remember, staying informed and vigilant is crucial for protecting yourself and your sensitive information
-            online. It's cybersecuritin' time
+            Remember, there is no single way to avoid all phishing attacks, but staying informed and vigilant is crucial
+            for protecting yourself and your sensitive information
+            online.
         </p>
     </section>
+    <footer class="footer">
+        <p>Contact Us: <a href="mailto:pantai.su2024@kmids.ac.th">pantai.su2024@kmids.ac.th</a> | <a
+                href="mailto:phonlakrit.ti2024@kmids.ac.th">phonlakrit.ti2024@kmids.ac.th</a></p>
+    </footer>
 </body>
+
 </html>
