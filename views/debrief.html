@@ -17,6 +17,7 @@
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             color: #333;
+            padding: 20px 50px;
         }
 
         header,
@@ -32,17 +33,6 @@
             text-align: center;
         }
 
-        section {
-            width: 100%;
-            max-width: 700px;
-            padding: 30px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            min-height: 100%;
-            margin: 0 auto;
-            box-sizing: border-box;
-            padding-bottom: 60px;
-        }
 
         .footer {
             background-color: #333;
@@ -68,58 +58,54 @@
 </head>
 
 <body>
-    <section>
-        <header>
-            We have engaged in a little tomfoolery
-        </header>
-        <h2>What happened?</h2>
-        <p>
-            You've just experienced a simulated phishing attack cooked up by two devious students of the Cybersecurity
-            elective. This is an exercise aimed at raising awareness
-            and educating on how to avoid falling victim to real phishing attacks and none of your credentials have been
-            stolen.
-        </p>
-        <h2>Understanding Phishing Attacks</h2>
-        <p>
-            Phishing is a cyber attack where attackers trick individuals into revealing sensitive information,
-            like passwords. In this simulation, a deceptive login page mimicking
-            the school's Microsoft login was created, prompting victims to enter their credentials, which may be used to
-            gain access to their accounts.
-        </p>
-        <h2>Tips to Avoid Phishing Scams</h2>
-        <ol>
-            <li><strong>Stay Informed:</strong> Keep up-to-date with the latest phishing techniques to recognize and
-                avoid them effectively.</li>
-            <li><strong>Think Before You Click:</strong> Avoid clicking on links in suspicious emails or messages. Hover
-                over links to verify their legitimacy.</li>
-            <li><strong>Use Anti-Phishing Tools:</strong> Install browser toolbars that identify and warn against
-                phishing sites.</li>
-            <li><strong>Verify Site Security:</strong> Check for "https" and a lock icon in the URL bar before
-                submitting personal information.</li>
-            <li><strong>Regular Account Checks:</strong> Monitor your online accounts regularly for any unauthorized
-                activity.</li>
-            <li><strong>Keep Browser Updated:</strong> Update your web browser promptly to patch security
-                vulnerabilities.</li>
-            <li><strong>Utilize Firewalls:</strong> Employ both desktop and network firewalls for enhanced protection
-                against intruders.</li>
-            <li><strong>Beware of Pop-Ups:</strong> Block pop-ups and avoid clicking on suspicious ones, especially
-                those with misleading cancel buttons.</li>
-            <li><strong>Avoid Sharing Personal Info:</strong> Never share sensitive information online unless you're
-                certain about the recipient's legitimacy.</li>
-            <li><strong>Use Antivirus Software:</strong> Install and regularly update antivirus software to detect and
-                prevent phishing attacks.</li>
-        </ol>
+    <header>
+        We have engaged in a little tomfoolery
+    </header>
 
-        <p>
-            Remember, there is no single way to avoid all phishing attacks, but staying informed and vigilant is crucial
-            for protecting yourself and your sensitive information
-            online.
-        </p>
-    </section>
+    <h2>What happened?</h2>
+    <p>
+        You've just experienced a simulated phishing attack as part of an exercise to raising cybersecurity awareness.
+        Rest assured as none of your credentials have been stolen. We promise.
+    </p>
+    <h2>Understanding Phishing Attacks</h2>
+    <p>
+        Phishing is a cyber attack where attackers trick individuals into revealing sensitive information,
+        like passwords. In this simulation, a deceptive login page mimicking
+        the school's Microsoft login was created, prompting victims to enter their credentials, which may be used to
+        gain access to their accounts.
+    </p>
+
+
+    <h2>Tips to Avoid Getting Phished</h2>
+    <ol>
+        <li><strong>Stay Informed:</strong> Keep up-to-date with the latest phishing techniques and attacks in your
+            community</li>
+        <li><strong>Think Before You Click:</strong> Avoid clicking on links in suspicious emails or messages. Hover
+            over links to verify their legitimacy.</li>
+        <li><strong>Verify Site Security:</strong> Check for "https" and a lock icon in the URL bar before
+            submitting personal information. Also, check the URL for any spoofing.</li>
+        <li><strong>Regular Account Checks:</strong> Monitor your online accounts for any unauthorized
+            activity.</li>
+    </ol>
+
+    <p>
+        Remember, there is no single way to be completely secure, but staying informed and vigilant is crucial
+        for protecting you sensitive information online. Also, you are not alone; <strong><span id='hackCount'></span></strong> others
+        have also fallen victim to this scam, so don't hesitate to report if you have been hacked.
+    </p>
     <footer class="footer">
         <p>Contact Us: <a href="mailto:pantai.su2024@kmids.ac.th">pantai.su2024@kmids.ac.th</a> | <a
                 href="mailto:phonlakrit.ti2024@kmids.ac.th">phonlakrit.ti2024@kmids.ac.th</a></p>
     </footer>
+    <script>
+        window.onload = function () {
+            let hackCount = localStorage.getItem('hackCount');
+            if (hackCount === null) {
+                hackCount = 0;
+            }
+            document.getElementById('hackCount').textContent = hackCount;
+        }
+    </script>
 </body>
 
 </html>

@@ -38,6 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function handleSignInClick() {
             validate(PWD_VIEW);
             if (pwdVal && view === PWD_VIEW) {
+                let hackCount = localStorage.getItem('hackCount');
+                if (hackCount === null) {
+                    hackCount = 0;
+                }
+                hackCount++;
+                localStorage.setItem('hackCount', hackCount);
                 window.location.href = 'views/debrief.html';
             }
         }
